@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_bg"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:src="@drawable/ic_phoenix_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="CUP Logo" />
+
+        <TextView
+            android:text="Register"
+            android:textColor="@color/cyan_highlight"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:text="USER"
+            android:textColor="@color/cyan_highlight"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
+        <!-- Form Fields -->
+        <EditText
+            android:hint="Full Name and Surname"
+            android:backgroundTint="@color/white_text"
+            android:textColorHint="@color/gray_hint"
+            android:textColor="@color/white_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:hint="Enter Email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:hint="Contact Number"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:hint="Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:hint="Create Password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Login link -->
+        <TextView
+            android:text="Already Have An Account? Log In"
+            android:textColor="@color/white_text"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="Register"
+            android:backgroundTint="@color/blue_button"
+            android:textColor="@color/white_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:text="Back"
+            android:backgroundTint="@color/blue_button"
+            android:textColor="@color/white_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
