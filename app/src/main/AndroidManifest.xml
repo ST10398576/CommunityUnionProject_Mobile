@@ -44,6 +44,12 @@
         <activity android:name=".ui.user.UpdateContactActivity" />
         <activity android:name=".ui.user.UpdateLocationActivity" />
         <activity android:name=".ui.user.UpdatePasswordActivity" />
+        <activity android:name=".ui.agent.RegisterBeneficiaryActivity" />
+        <activity android:name=".ui.agent.BeneficiaryListActivity" />
+        <activity android:name=".ui.agent.UpdateBeneficiaryActivity" />
+        <activity android:name=".ui.agent.TicketLogActivity" />
+        <activity android:name=".ui.agent.LogTicketActivity" />
+        <activity android:name=".ui.agent.ListOfTicketsActivity" />
     </application>
 
 </manifest>
