@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:padding="16dp"
-    tools:context=".ui.user.UserRegisterActivity">
+    tools:context=".ui.user.UpdateLocationActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -16,111 +16,108 @@
         android:src="@drawable/ic_phoenix_logo" />
 
     <TextView
-        android:id="@+id/tvRegisterUser"
+        android:id="@+id/tvUpdateLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
-        android:layout_marginTop="24dp"
-        android:text="Register\nUSER"
-        android:textColor="#00FFFF"
-        android:textSize="36sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etFullName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvRegisterUser"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Full Name and Surname"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etFullName"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter Email"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etContactNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etEmail"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Contact Number"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etContactNumber"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Location"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etCreatePassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etLocation"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Create Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etCreatePassword"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <TextView
-        android:id="@+id/tvLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etConfirmPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Already Have An account? Log In"
-        android:textColor="@android:color/white" />
+        android:layout_marginTop="50dp"
+        android:text="Update Location"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
 
-    <Button
-        android:id="@+id/btnRegister"
+    <EditText
+        android:id="@+id/etOldLocationArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnBack"
-        android:background="@drawable/button_background"
-        android:text="Register"
-        android:textColor="@android:color/white" />
+        android:layout_below="@id/tvUpdateLocation"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Old Location Area"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
 
-    <Button
-        android:id="@+id/btnBack"
+    <EditText
+        android:id="@+id/etOldLocationCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_background"
-        android:text="Back"
-        android:textColor="@android:color/white" />
+        android:layout_below="@id/etOldLocationArea"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Old Location City"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
+
+    <EditText
+        android:id="@+id/etOldLocationProvince"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etOldLocationCity"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Old Location Province"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
+
+    <EditText
+        android:id="@+id/etNewLocationArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etOldLocationProvince"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="New Location Area"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
+
+    <EditText
+        android:id="@+id/etNewLocationCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNewLocationArea"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="New Location City"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
+
+    <EditText
+        android:id="@+id/etNewLocationProvince"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNewLocationCity"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="New Location Province"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_background_back"
+            android:text="Back"
+            android:textColor="#0000FF" />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_background_back"
+            android:text="Confirm"
+            android:textColor="#0000FF" />
+
+    </LinearLayout>
 
 </RelativeLayout>

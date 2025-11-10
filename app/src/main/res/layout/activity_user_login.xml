@@ -1,71 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_bg"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="24dp">
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.user.UserLoginActivity">
 
     <ImageView
-        android:src="@drawable/ic_phoenix_logo"
+        android:id="@+id/logo"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:contentDescription="CUP Logo" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
 
     <TextView
-        android:text="Welcome"
-        android:textColor="@color/cyan_highlight"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+        android:id="@+id/tvWelcomeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="24dp"
+        android:text="Welcome\nUSER"
+        android:textColor="#00FFFF"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:text="USER"
-        android:textColor="@color/cyan_highlight"
-        android:textSize="20sp"
-        android:layout_marginBottom="24dp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+        android:id="@+id/tvGladToSeeYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcomeUser"
+        android:layout_marginTop="8dp"
+        android:text="We are glad to see you again"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
     <EditText
-        android:hint="Enter Email"
-        android:inputType="textEmailAddress"
+        android:id="@+id/etEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvGladToSeeYou"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Enter Email"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
 
     <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEmail"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
         android:hint="Enter Password"
         android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
 
     <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
         android:text="Don't Have An Account? Register"
-        android:textColor="@color/white_text"
-        android:textSize="14sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="12dp"
-        android:gravity="center"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:text="Log In"
-        android:backgroundTint="@color/blue_button"
-        android:textColor="@color/white_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBack"
+        android:background="@drawable/button_background"
+        android:text="Log In"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnBack"
-        android:text="Back"
-        android:backgroundTint="@color/blue_button"
-        android:textColor="@color/white_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"/>
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_background"
+        android:text="Back"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

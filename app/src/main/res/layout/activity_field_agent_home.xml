@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.agent.FieldAgentHomeActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Welcome\n{{Field Agent}}"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/btnRegisterBeneficiary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcome"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="Register Beneficiary"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnBeneficiaryList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRegisterBeneficiary"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Beneficiary List"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnLogTicket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnBeneficiaryList"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Log Ticket"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnCurrentTickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogTicket"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Current Tickets"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnPartnerNgo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCurrentTickets"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Partner NGO/NPOs"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPartnerNgo"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Settings"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

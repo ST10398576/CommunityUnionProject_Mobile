@@ -1,46 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_bg"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center_horizontal">
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.agent.FieldAgentLoginActivity">
 
     <ImageView
-        android:src="@drawable/ic_phoenix_logo"
+        android:id="@+id/logo"
         android:layout_width="80dp"
-        android:layout_height="80dp" />
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
 
     <TextView
-        android:text="Welcome"
-        android:textColor="@color/cyan_highlight"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        android:id="@+id/tvWelcomeAgent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="24dp"
+        android:text="Welcome\nField Agent"
+        android:textColor="#00FFFF"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etAgentId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcomeAgent"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Enter your Agent ID"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etAgentId"
         android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:background="@drawable/edit_text_background"
+        android:hint="Enter your Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
 
     <TextView
-        android:text="Field Agent"
-        android:textColor="@color/cyan_highlight"
-        android:textSize="20sp"
-        android:layout_marginBottom="24dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <EditText android:hint="Enter your Agent ID" style="@style/AuthEditText"/>
-    <EditText android:hint="Enter your Password" style="@style/AuthEditText" android:inputType="textPassword"/>
-
-    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
         android:text="Don't Have An Account? Register"
-        android:textColor="@color/white_text"
-        android:textSize="14sp"
-        android:gravity="center"
-        android:layout_marginVertical="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textColor="@android:color/white" />
 
-    <Button android:id="@+id/btnLogin" android:text="Log In" style="@style/AuthButton"/>
-    <Button android:id="@+id/btnBack" android:text="Back" style="@style/AuthButton"/>
-</LinearLayout>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBack"
+        android:background="@drawable/button_background"
+        android:text="Log In"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_background"
+        android:text="Back"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

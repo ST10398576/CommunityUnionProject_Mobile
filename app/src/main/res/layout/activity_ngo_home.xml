@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.ngo.NgoHomeActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Welcome\n{{NGO/NPO}}"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/btnCurrentTickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcome"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="Current Tickets"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnContactAgent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCurrentTickets"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Contact an Agent"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnOfferingAid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnContactAgent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Offering Aid"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnPartnerNgo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnOfferingAid"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Partner NGO/NPOs"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnGoFundMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPartnerNgo"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Go Fund Me"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnGoFundMe"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Settings"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

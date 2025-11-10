@@ -2,15 +2,15 @@ package com.example.community_union_project_ngo_mobile.ui.user
 
 import android.content.Intent
 import android.os.Bundle
-import com.example.community_union_project_ngo_mobile.databinding.ActivityUserRegisterBinding
+import com.example.community_union_project_ngo_mobile.databinding.ActivityAgentInformationBinding
 import com.example.community_union_project_ngo_mobile.ui.common.BaseAuthActivity
 
-class UserRegisterActivity : BaseAuthActivity() {
-    private lateinit var binding: ActivityUserRegisterBinding
+class AgentInformationActivity : BaseAuthActivity() {
+    private lateinit var binding: ActivityAgentInformationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityUserRegisterBinding.inflate(layoutInflater)
+        binding = ActivityAgentInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupUI()
@@ -23,14 +23,18 @@ class UserRegisterActivity : BaseAuthActivity() {
     }
 
     override fun setupListeners() {
-        binding.btnRegister.setOnClickListener {
-            // TODO: Save user data (local DB or Firebase)
-            val intent = Intent(this, UserLoginActivity::class.java)
+        binding.btnContactInfo.setOnClickListener {
+            val intent = Intent(this, AgentContactListActivity::class.java)
             startActivity(intent)
         }
 
-        binding.tvLogin.setOnClickListener {
-            val intent = Intent(this, UserLoginActivity::class.java)
+        binding.btnFaq.setOnClickListener {
+            val intent = Intent(this, FaqActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnSupervisorEscalation.setOnClickListener {
+            val intent = Intent(this, SupervisorEscalationActivity::class.java)
             startActivity(intent)
         }
 

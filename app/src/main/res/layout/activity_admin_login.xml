@@ -1,55 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_bg"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center_horizontal">
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.admin.AdminLoginActivity">
 
     <ImageView
-        android:src="@drawable/ic_phoenix_logo"
+        android:id="@+id/logo"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:contentDescription="@string/app_name" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
 
     <TextView
-        android:text="Welcome"
-        android:textColor="@color/cyan_highlight"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/tvWelcomeAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="24dp"
+        android:text="Welcome\nAdmin"
+        android:textColor="#00FFFF"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:text="Admin"
-        android:textColor="@color/cyan_highlight"
-        android:textSize="20sp"
-        android:layout_marginBottom="24dp"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+        android:id="@+id/tvGladToSeeYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcomeAdmin"
+        android:layout_marginTop="8dp"
+        android:text="We are glad to see you again"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/etAdminId"
-        android:hint="Enter Admin ID"
-        style="@style/AuthEditText" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvGladToSeeYou"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Enter Admin-ID"
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
 
     <EditText
         android:id="@+id/etAdminPassword"
-        android:hint="Enter Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etAdminId"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Enter Admin Password"
         android:inputType="textPassword"
-        style="@style/AuthEditText" />
+        android:padding="12dp"
+        android:textColorHint="#A9A9A9" />
 
     <Button
         android:id="@+id/btnAdminLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnAdminBack"
+        android:background="@drawable/button_background"
         android:text="Log In"
-        style="@style/AuthButton"
-        android:layout_marginTop="16dp"/>
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnAdminBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_background"
         android:text="Back"
-        style="@style/AuthButton"
-        android:layout_marginTop="8dp"/>
-</LinearLayout>
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

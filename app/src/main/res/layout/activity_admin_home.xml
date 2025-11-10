@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.admin.AdminHomeActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Welcome\nAdmins"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/btnViewCurrentTickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWelcome"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_background"
+        android:text="View Current Tickets"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnPendingVerifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnViewCurrentTickets"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Pending Verifications"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnViewSyncLogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnPendingVerifications"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="View Sync Logs"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnTools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnViewSyncLogs"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Tools"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnVerifyNgo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnTools"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Verify NGO/NPO"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnVerifyFieldAgent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnVerifyNgo"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Verify Field Agent"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnVerifyFieldAgent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Log Out"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
