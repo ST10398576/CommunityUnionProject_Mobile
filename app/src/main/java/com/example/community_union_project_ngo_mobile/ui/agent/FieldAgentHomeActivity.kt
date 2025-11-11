@@ -2,8 +2,11 @@ package com.example.community_union_project_ngo_mobile.ui.agent
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.community_union_project_ngo_mobile.databinding.ActivityFieldAgentHomeBinding
+import com.example.community_union_project_ngo_mobile.ui.user.GoFundMeActivity
+import com.example.community_union_project_ngo_mobile.ui.user.PartnerNgoListActivity
 
 class FieldAgentHomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFieldAgentHomeBinding
@@ -36,9 +39,25 @@ class FieldAgentHomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.btnPartnerNgo.setOnClickListener {
+            val intent = Intent(this, PartnerNgoListActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnGoFundMe.setOnClickListener {
+            val intent = Intent(this, GoFundMeActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnSettings.setOnClickListener {
             val intent = Intent(this, FieldAgentSettingsActivity::class.java)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        })
     }
 }

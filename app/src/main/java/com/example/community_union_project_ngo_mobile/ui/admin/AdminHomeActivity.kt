@@ -2,6 +2,7 @@ package com.example.communityunionproject_mobile.ui.admin
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.communityunionproject_mobile.databinding.ActivityAdminHomeBinding
 
@@ -35,5 +36,11 @@ class AdminHomeActivity : AppCompatActivity() {
         binding.btnAdminSettings.setOnClickListener {
             startActivity(Intent(this, AdminSettingsActivity::class.java))
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        })
     }
 }

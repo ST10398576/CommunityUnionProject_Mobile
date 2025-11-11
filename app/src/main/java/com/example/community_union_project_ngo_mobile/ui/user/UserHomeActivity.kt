@@ -2,6 +2,7 @@ package com.example.community_union_project_ngo_mobile.ui.user
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.community_union_project_ngo_mobile.databinding.ActivityUserHomeBinding
 
@@ -26,9 +27,20 @@ class UserHomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.btnGoFundMe.setOnClickListener {
+            val intent = Intent(this, GoFundMeActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnSettings.setOnClickListener {
             val intent = Intent(this, UserSettingsActivity::class.java)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        })
     }
 }

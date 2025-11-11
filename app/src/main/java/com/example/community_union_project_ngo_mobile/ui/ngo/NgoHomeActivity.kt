@@ -1,6 +1,5 @@
 package com.example.community_union_project_ngo_mobile.ui.ngo
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.community_union_project_ngo_mobile.databinding.ActivityNgoHomeBinding
@@ -15,6 +14,13 @@ class NgoHomeActivity : AppCompatActivity() {
 
         // Retrieve NGO name passed from login or previous screen
         val ngoName = intent.getStringExtra("NGO_NAME")
+        binding.tvWelcome.text = "Welcome\n${ngoName}"
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finishAffinity()
+            }
+        })
         binding.tvWelcome.text = "Welcome\n${ngoName ?: "NGO Partner"}"
 
         // Current Tickets
