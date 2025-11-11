@@ -36,6 +36,11 @@
         <activity android:name=".ui.user.AgentContactListActivity" />
         <activity android:name=".ui.user.AgentDetailActivity" />
         <activity android:name=".ui.user.FaqActivity" />
+        <activity android:name=".ui.ngo.NgoCurrentTicketsActivity" />
+        <activity android:name=".ui.ngo.NgoContactAgentActivity" />
+        <activity android:name=".ui.ngo.NgoOfferingAidActivity" />
+        <activity android:name=".ui.ngo.NgoPartnersActivity" />
+        <activity android:name=".ui.ngo.NgoSettingsActivity" />
         <activity android:name=".ui.user.SupervisorEscalationActivity" />
         <activity android:name=".ui.user.EscalationSentActivity" />
         <activity android:name=".ui.user.PartnerNgoListActivity" />
