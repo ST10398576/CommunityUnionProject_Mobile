@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.user.GoFundMeActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Go Fund Me"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tvHowToHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="24dp"
+        android:text="How You Can Help"
+        android:textColor="#FFFF00" />
+
+    <TextView
+        android:id="@+id/tvDonate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHowToHelp"
+        android:layout_marginTop="8dp"
+        android:text="- Donate any amount – every rand helps!"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDonate"
+        android:layout_marginTop="8dp"
+        android:text="- Share this campaign with others in your network"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvPartner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvShare"
+        android:layout_marginTop="8dp"
+        android:text="- Partner with us if you’re from an NGO or social sector"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvBuild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPartner"
+        android:layout_marginTop="24dp"
+        android:text="Let’s build accountability + trust + efficiency into South Africa’s aid ecosystem."
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnCommunityUnionProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBuild"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FF0000"
+        android:text="Community Union Project" />
+
+    <TextView
+        android:id="@+id/tvEnterAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCommunityUnionProject"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Enter an Amount (“R”) To Donate"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvEnterAmount"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:hint="R 1000"
+        android:inputType="numberDecimal"
+        android:padding="12dp"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnProceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBack"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background_back"
+        android:text="Proceed"
+        android:textColor="#0000FF" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_background_back"
+        android:text="Back"
+        android:textColor="#0000FF" />
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:padding="16dp"
+    tools:context=".ui.user.DonationCompleteActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_phoenix_logo" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Go Fund Me"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tvCommunityUnionProject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:background="#FF0000"
+        android:padding="8dp"
+        android:text="Community Union Project"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvThankYou"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCommunityUnionProject"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:text="THANK YOU FOR YOUR DONATION"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvAmountDonated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvThankYou"
+        android:background="@android:color/white"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/ivPaymentMethod"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/tvAmountDonated"
+        android:layout_marginTop="24dp"
+        android:layout_toStartOf="@id/tvPaymentMethod"
+        android:layout_marginEnd="8dp"/>
+
+    <TextView
+        android:id="@+id/tvPaymentMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAmountDonated"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnDownloadReceipt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPaymentMethod"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#FF0000"
+        android:text="Download Receipt" />
+
+    <Button
+        android:id="@+id/btnHomePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_background_back"
+        android:text="Home Page"
+        android:textColor="#0000FF" />
+
+</RelativeLayout>
