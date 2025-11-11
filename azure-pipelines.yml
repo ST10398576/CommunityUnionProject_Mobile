@@ -1,19 +1,44 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Azure DevOps Pipeline for CommunityUnionProject_Mobile
+# Runs on every commit and pull request to master
+# Builds Kotlin project, runs JUnit tests, and deploys automatically
 
 trigger:
-- master
+  branches:
+    include:
+      - master
+
+pr:
+  branches:
+    include:
+      - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: Checkout@1
+  displayName: 'Checkout GitHub Repository'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: Gradle@2
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'gradlew'
+    tasks: 'clean build'
+    publishJUnitResults: true
+    testResultsFiles: '**/build/test-results/test/*.xml'
+  displayName: 'Build Kotlin Project & Run JUnit Tests'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop'
+    publishLocation: 'Container'
+  displayName: 'Publish Build Artifacts'
+
+# Automated Deployment to Azure Web App (example target)
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: '<Your-Azure-Service-Connection>'
+    appName: 'CommunityUnionProjectMobileApp'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+  displayName: 'Deploy to Azure Web App'
