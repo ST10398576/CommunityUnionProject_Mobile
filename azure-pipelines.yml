@@ -38,7 +38,7 @@ steps:
 # Automated Deployment to Azure Web App (example target)
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: '<Your-Azure-Service-Connection>'
+    azureSubscription: 'ST10278170'
     appName: 'CommunityUnionProjectMobileApp'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
   displayName: 'Deploy to Azure Web App'
