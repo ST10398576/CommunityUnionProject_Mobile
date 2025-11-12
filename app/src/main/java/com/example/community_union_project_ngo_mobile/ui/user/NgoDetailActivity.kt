@@ -1,16 +1,23 @@
 package com.example.community_union_project_ngo_mobile.ui.user
 
 import android.os.Bundle
+import android.widget.Toast
 import com.example.community_union_project_ngo_mobile.databinding.ActivityNgoDetailBinding
 import com.example.community_union_project_ngo_mobile.ui.common.BaseAuthActivity
+import com.google.firebase.firestore.FirebaseFirestore
 
 class NgoDetailActivity : BaseAuthActivity() {
     private lateinit var binding: ActivityNgoDetailBinding
+    private lateinit var db: FirebaseFirestore
+    private lateinit var ngoId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNgoDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        db = FirebaseFirestore.getInstance()
+        ngoId = intent.getStringExtra("NGO_ID")!!
 
         setupUI()
         setupListeners()
@@ -18,33 +25,19 @@ class NgoDetailActivity : BaseAuthActivity() {
     }
 
     override fun setupUI() {
-        val ngoName = intent.getStringExtra("NGO_NAME")
-        binding.tvNgoName.text = ngoName
-
-        val communityAssistance: String
-        val programs: String
-        val westernCapePresence: String
-        val contact: String
-
-        when (ngoName) {
-            "Qhubeka Charity Foundation" -> {
-                communityAssistance = "Provides bicycles to individuals, enhancing access to education, healthcare, and employment opportunities."
-                programs = "Work-to-Earn, Learn-to-Earn, and Sport-to-Earn initiatives where participants earn bicycles through community service or academic achievements."
-                westernCapePresence = "Active in areas like Khayelitsha, facilitating mobility for schoolchildren and micro-enterprises."
-                contact = "Email: info@qhubeka.org | Phone: +27 83 325 1344"
+        db.collection("users").document(ngoId).get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    binding.tvNgoName.text = document.getString("ngoName")
+                    binding.tvCommunityAssistance.text = document.getString("communityAssistance")
+                    binding.tvPrograms.text = document.getString("programs")
+                    binding.tvWesternCapePresence.text = document.getString("westernCapePresence")
+                    binding.tvContact.text = document.getString("contactInformation")
+                }
             }
-            // Add other NGOs here
-            else -> {
-                communityAssistance = "Details not available."
-                programs = "Details not available."
-                westernCapePresence = "Details not available."
-                contact = "Details not available."
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error getting document: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
-        }
-        binding.tvCommunityAssistance.text = communityAssistance
-        binding.tvPrograms.text = programs
-        binding.tvWesternCapePresence.text = westernCapePresence
-        binding.tvContact.text = contact
     }
 
     override fun setupListeners() {
@@ -54,6 +47,6 @@ class NgoDetailActivity : BaseAuthActivity() {
     }
 
     override fun setupObservers() {
-        // TODO: Implement observers
+        // No observers needed
     }
 }

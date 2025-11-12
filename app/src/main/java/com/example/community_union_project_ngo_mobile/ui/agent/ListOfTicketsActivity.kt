@@ -5,11 +5,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.example.community_union_project_ngo_mobile.R
 import com.example.community_union_project_ngo_mobile.databinding.ActivityListOfTicketsBinding
 import com.example.community_union_project_ngo_mobile.ui.common.BaseAuthActivity
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 data class Ticket(
+    val id: String,
     val ticketNumber: Int,
     val ticketType: String,
     val beneficiary: String,
@@ -23,19 +27,14 @@ data class Ticket(
 
 class ListOfTicketsActivity : BaseAuthActivity() {
     private lateinit var binding: ActivityListOfTicketsBinding
-
-    // Placeholder for ticket data
-    private val tickets = listOf(
-        Ticket(57, "Food", "Vincent Abraham", "David Sunday", "30 January 2025", 2, "Cape Town", "Pending", "Delivery of Food *****"),
-        Ticket(56, "Housing", "Ethan Cole", "Megan Cross", "16 March 2025", 3, "Paarl", "Resolved", ""),
-        Ticket(55, "Employment", "Ashley Pierce", "Nathan Carter", "29 July 2025", 2, "Worcester", "In Progress", ""),
-        Ticket(54, "Transport", "Conner James", "David Sunday", "10 January 2025", 1, "Somerset West", "Pending", "")
-    )
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListOfTicketsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        db = FirebaseFirestore.getInstance()
 
         setupUI()
         setupListeners()
@@ -45,10 +44,28 @@ class ListOfTicketsActivity : BaseAuthActivity() {
     override fun setupUI() {
         val userRole = intent.getStringExtra("USER_ROLE")
 
-        tickets.forEach { ticket ->
-            val ticketView = createTicketView(ticket, userRole)
-            binding.llTicketList.addView(ticketView)
-        }
+        db.collection("tickets").orderBy("date", Query.Direction.DESCENDING).get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val ticket = Ticket(
+                        document.id,
+                        document.getLong("ticketNumber")?.toInt() ?: 0,
+                        document.getString("category") ?: "",
+                        document.getString("beneficiaryName") ?: "",
+                        document.getString("fieldAgentName") ?: "",
+                        document.getString("date") ?: "",
+                        document.getLong("urgency")?.toInt() ?: 0,
+                        document.getString("deliveryLocation") ?: "",
+                        document.getString("status") ?: "",
+                        document.getString("details") ?: ""
+                    )
+                    val ticketView = createTicketView(ticket, userRole)
+                    binding.llTicketList.addView(ticketView)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error getting documents: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
 
         if (userRole == "NGO" || userRole == "ADMIN") {
             binding.llButtons.visibility = View.GONE
@@ -72,7 +89,7 @@ class ListOfTicketsActivity : BaseAuthActivity() {
             if (userRole == "AGENT") {
                 setOnClickListener {
                     val intent = Intent(this@ListOfTicketsActivity, UpdateTicketActivity::class.java)
-                    intent.putExtra("TICKET_TYPE", ticket.ticketType)
+                    intent.putExtra("TICKET_ID", ticket.id)
                     startActivity(intent)
                 }
             }

@@ -4,27 +4,24 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.example.community_union_project_ngo_mobile.R
 import com.example.community_union_project_ngo_mobile.databinding.ActivityBeneficiaryListBinding
 import com.example.community_union_project_ngo_mobile.ui.common.BaseAuthActivity
+import com.google.firebase.firestore.FirebaseFirestore
+
+data class Beneficiary(val id: String, val name: String, val assistanceCategory: String)
 
 class BeneficiaryListActivity : BaseAuthActivity() {
     private lateinit var binding: ActivityBeneficiaryListBinding
-
-    // Placeholder for beneficiary data
-    private val beneficiaries = listOf(
-        Beneficiary("Conner James", "Transport"),
-        Beneficiary("Vincent Abraham", "Food"),
-        Beneficiary("Ethan Cole", "Housing"),
-        Beneficiary("Maya Evans", "Education"),
-        Beneficiary("Gabriella Hughes", "Health Care"),
-        Beneficiary("Nathan Carter", "Employment")
-    )
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBeneficiaryListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        db = FirebaseFirestore.getInstance()
 
         setupUI()
         setupListeners()
@@ -32,10 +29,21 @@ class BeneficiaryListActivity : BaseAuthActivity() {
     }
 
     override fun setupUI() {
-        beneficiaries.forEach {
-            val beneficiaryView = createBeneficiaryView(it)
-            binding.llBeneficiaryList.addView(beneficiaryView)
-        }
+        db.collection("beneficiaries").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val beneficiary = Beneficiary(
+                        document.id,
+                        document.getString("fullName") ?: "",
+                        document.getString("categoryOfAssistance") ?: ""
+                    )
+                    val beneficiaryView = createBeneficiaryView(beneficiary)
+                    binding.llBeneficiaryList.addView(beneficiaryView)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error getting documents: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun createBeneficiaryView(beneficiary: Beneficiary): LinearLayout {
@@ -51,8 +59,7 @@ class BeneficiaryListActivity : BaseAuthActivity() {
             setPadding(16, 16, 16, 16)
             setOnClickListener {
                 val intent = Intent(this@BeneficiaryListActivity, UpdateBeneficiaryActivity::class.java)
-                intent.putExtra("BENEFICIARY_NAME", beneficiary.name)
-                intent.putExtra("ASSISTANCE_CATEGORY", beneficiary.assistanceCategory)
+                intent.putExtra("BENEFICIARY_ID", beneficiary.id)
                 startActivity(intent)
             }
         }
@@ -83,6 +90,4 @@ class BeneficiaryListActivity : BaseAuthActivity() {
     override fun setupObservers() {
         // TODO: Implement observers
     }
-
-    private data class Beneficiary(val name: String, val assistanceCategory: String)
 }

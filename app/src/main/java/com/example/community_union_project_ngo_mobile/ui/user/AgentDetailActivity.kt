@@ -1,16 +1,23 @@
 package com.example.community_union_project_ngo_mobile.ui.user
 
 import android.os.Bundle
+import android.widget.Toast
 import com.example.community_union_project_ngo_mobile.databinding.ActivityAgentDetailBinding
 import com.example.community_union_project_ngo_mobile.ui.common.BaseAuthActivity
+import com.google.firebase.firestore.FirebaseFirestore
 
 class AgentDetailActivity : BaseAuthActivity() {
     private lateinit var binding: ActivityAgentDetailBinding
+    private lateinit var db: FirebaseFirestore
+    private lateinit var agentId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAgentDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        db = FirebaseFirestore.getInstance()
+        agentId = intent.getStringExtra("AGENT_ID")!!
 
         setupUI()
         setupListeners()
@@ -18,15 +25,18 @@ class AgentDetailActivity : BaseAuthActivity() {
     }
 
     override fun setupUI() {
-        val agentName = intent.getStringExtra("AGENT_NAME")
-        binding.btnCallAgent.text = "Call $agentName"
-
-        val agentDetails = when (agentName) {
-            "David Sunday" -> "Agent is currently busy.\nAgent Operational Area: Somerset West\nAgent Number: +27 61 160 6769"
-            "Megan Cross" -> "Agent is available.\nAgent Operational Area: Stellenbosch\nAgent Number: +27 72 345 6789"
-            else -> "No details available."
-        }
-        binding.tvAgentDetails.text = agentDetails
+        db.collection("users").document(agentId).get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    val agentName = document.getString("fullName")
+                    binding.btnCallAgent.text = "Call $agentName"
+                    val agentDetails = "Agent is currently busy.\nAgent Operational Area: ${document.getString("location")}\nAgent Number: ${document.getString("contact")}"
+                    binding.tvAgentDetails.text = agentDetails
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error getting document: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     override fun setupListeners() {
@@ -36,6 +46,6 @@ class AgentDetailActivity : BaseAuthActivity() {
     }
 
     override fun setupObservers() {
-        // TODO: Implement observers
+        // No observers needed
     }
 }

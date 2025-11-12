@@ -68,10 +68,20 @@
         android:textColor="@android:color/white" />
 
     <Button
-        android:id="@+id/btnVerifyNgo"
+        android:id="@+id/btnTerminationRequests"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnTools"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Termination Requests"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btnVerifyNgo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnTerminationRequests"
         android:layout_marginTop="16dp"
         android:background="@drawable/button_background"
         android:text="Verify NGO/NPO"

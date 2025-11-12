@@ -4,26 +4,24 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.example.community_union_project_ngo_mobile.R
 import com.example.community_union_project_ngo_mobile.databinding.ActivityViewSyncLogsBinding
 import com.example.community_union_project_ngo_mobile.ui.common.BaseAuthActivity
+import com.google.firebase.firestore.FirebaseFirestore
 
 data class SyncLog(val agentName: String, val region: String, val status: String, val lastSync: String)
 
 class ViewSyncLogsActivity : BaseAuthActivity() {
     private lateinit var binding: ActivityViewSyncLogsBinding
-
-    // Placeholder for sync log data
-    private val logs = listOf(
-        SyncLog("Sarah Khan", "Western Cape", "Offline", "12:43 PM"),
-        SyncLog("David Sunday", "Cape Town", "Online", "Synced"),
-        SyncLog("Michelle Lopez", "Paarl", "Offline", "11:42 AM")
-    )
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityViewSyncLogsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        db = FirebaseFirestore.getInstance()
 
         setupUI()
         setupListeners()
@@ -31,10 +29,23 @@ class ViewSyncLogsActivity : BaseAuthActivity() {
     }
 
     override fun setupUI() {
-        logs.forEach { log ->
-            val logView = createSyncLogView(log)
-            binding.llSyncLogList.addView(logView)
-        }
+        db.collection("users").whereEqualTo("role", "agent").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    // TODO: Implement actual online/offline status logic
+                    val log = SyncLog(
+                        document.getString("fullName") ?: "",
+                        document.getString("location") ?: "",
+                        "Offline", // Placeholder
+                        "12:43 PM" // Placeholder
+                    )
+                    val logView = createSyncLogView(log)
+                    binding.llSyncLogList.addView(logView)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error getting documents: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun createSyncLogView(log: SyncLog): LinearLayout {
@@ -86,6 +97,6 @@ class ViewSyncLogsActivity : BaseAuthActivity() {
     }
 
     override fun setupObservers() {
-        // TODO: Implement observers
+        // No observers needed
     }
 }

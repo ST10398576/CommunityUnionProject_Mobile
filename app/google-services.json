@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "198063732083",
+    "project_id": "communityunionproject",
+    "storage_bucket": "communityunionproject.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198063732083:android:bb778de217686892d48106",
+        "android_client_info": {
+          "package_name": "com.example.community_union_project_ngo_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpEL9h20ndRbsvzzGBZb0z6LAMG-Zm-SU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
