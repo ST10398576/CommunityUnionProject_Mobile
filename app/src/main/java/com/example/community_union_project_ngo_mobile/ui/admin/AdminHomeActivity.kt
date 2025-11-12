@@ -35,6 +35,11 @@ class AdminHomeActivity : AppCompatActivity() {
             val intent = Intent(this, ToolsActivity::class.java)
             startActivity(intent)
         }
+        
+        binding.btnTerminationRequests.setOnClickListener {
+            val intent = Intent(this, TerminationRequestsActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.btnLogout.setOnClickListener {
             finish()
