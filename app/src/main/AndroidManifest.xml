@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Community_Union_Project_NGO_Mobile">
+
+        <!-- Main and Onboarding -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,40 +23,67 @@
         </activity>
         <activity android:name=".ui.onboarding.SplashActivity" />
         <activity android:name=".ui.onboarding.OnboardingActivity" />
+
+        <!-- User Role -->
         <activity android:name=".ui.user.UserRegisterActivity" />
         <activity android:name=".ui.user.UserLoginActivity" />
         <activity android:name=".ui.user.UserHomeActivity" />
-        <activity android:name=".ui.agent.FieldAgentRegisterActivity" />
-        <activity android:name=".ui.agent.FieldAgentLoginActivity" />
-        <activity android:name=".ui.agent.FieldAgentHomeActivity" />
-        <activity android:name=".ui.ngo.NgoRegisterActivity" />
-        <activity android:name=".ui.ngo.NgoLoginActivity" />
-        <activity android:name=".ui.ngo.NgoHomeActivity" />
-        <activity android:name=".ui.admin.AdminLoginActivity" />
-        <activity android:name=".ui.admin.AdminHomeActivity" />
-        <activity android:name=".ui.user.AgentInformationActivity" />
-        <activity android:name=".ui.user.AgentContactListActivity" />
-        <activity android:name=".ui.user.AgentDetailActivity" />
-        <activity android:name=".ui.user.FaqActivity" />
-        <activity android:name=".ui.ngo.NgoCurrentTicketsActivity" />
-        <activity android:name=".ui.ngo.NgoContactAgentActivity" />
-        <activity android:name=".ui.ngo.NgoOfferingAidActivity" />
-        <activity android:name=".ui.ngo.NgoPartnersActivity" />
-        <activity android:name=".ui.ngo.NgoSettingsActivity" />
-        <activity android:name=".ui.user.SupervisorEscalationActivity" />
-        <activity android:name=".ui.user.EscalationSentActivity" />
-        <activity android:name=".ui.user.PartnerNgoListActivity" />
-        <activity android:name=".ui.user.NgoDetailActivity" />
         <activity android:name=".ui.user.UserSettingsActivity" />
         <activity android:name=".ui.user.UpdateContactActivity" />
         <activity android:name=".ui.user.UpdateLocationActivity" />
         <activity android:name=".ui.user.UpdatePasswordActivity" />
+        <activity android:name=".ui.user.AgentInformationActivity" />
+        <activity android:name=".ui.user.AgentContactListActivity" />
+        <activity android:name=".ui.user.AgentDetailActivity" />
+        <activity android:name=".ui.user.FaqActivity" />
+        <activity android:name=".ui.user.SupervisorEscalationActivity" />
+        <activity android:name=".ui.user.EscalationSentActivity" />
+        <activity android:name=".ui.user.PartnerNgoListActivity" />
+        <activity android:name=".ui.user.NgoDetailActivity" />
+        <activity android:name=".ui.user.GoFundMeActivity" />
+        <activity android:name=".ui.user.PaymentMethodActivity" />
+        <activity android:name=".ui.user.DonationCompleteActivity" />
+
+
+        <!-- Agent Role -->
+        <activity android:name=".ui.agent.FieldAgentRegisterActivity" />
+        <activity android:name=".ui.agent.FieldAgentLoginActivity" />
+        <activity android:name=".ui.agent.FieldAgentHomeActivity" />
+        <activity android:name=".ui.agent.FieldAgentSettingsActivity" />
+        <activity android:name=".ui.agent.UpdateContactActivity" />
+        <activity android:name=".ui.agent.UpdateLocationActivity" />
+        <activity android:name=".ui.agent.UpdatePasswordActivity" />
         <activity android:name=".ui.agent.RegisterBeneficiaryActivity" />
         <activity android:name=".ui.agent.BeneficiaryListActivity" />
         <activity android:name=".ui.agent.UpdateBeneficiaryActivity" />
         <activity android:name=".ui.agent.TicketLogActivity" />
         <activity android:name=".ui.agent.LogTicketActivity" />
         <activity android:name=".ui.agent.ListOfTicketsActivity" />
+        <activity android:name=".ui.agent.UpdateTicketActivity" />
+
+
+        <!-- NGO Role -->
+        <activity android:name=".ui.ngo.NgoRegisterActivity" />
+        <activity android:name=".ui.ngo.NgoLoginActivity" />
+        <activity android:name=".ui.ngo.NgoHomeActivity" />
+        <activity android:name=".ui.ngo.NgoSettingsActivity" />
+        <activity android:name=".ui.ngo.NgoCurrentTicketsActivity" />
+        <activity android:name=".ui.ngo.NgoContactAgentActivity" />
+        <activity android:name=".ui.ngo.NgoOfferingAidActivity" />
+        <activity android:name=".ui.ngo.NgoListOfPartnersActivity" />
+        <activity android:name=".ui.ngo.NgoPartnersActivity" />
+        <activity android:name=".ui.ngo.NgoCollaborationActivity" />
+        <activity android:name=".ui.ngo.TerminateContractActivity" />
+        <activity android:name=".ui.ngo.TerminationRequestSentActivity" />
+
+
+        <!-- Admin Role -->
+        <activity android:name=".ui.admin.AdminLoginActivity" />
+        <activity android:name=".ui.admin.AdminHomeActivity" />
+        <activity android:name=".ui.admin.PendingVerificationActivity" />
+        <activity android:name=".ui.admin.VerifyNgoActivity" />
+        <activity android:name=".ui.admin.VerifyFieldAgentActivity" />
+
     </application>
 
 </manifest>

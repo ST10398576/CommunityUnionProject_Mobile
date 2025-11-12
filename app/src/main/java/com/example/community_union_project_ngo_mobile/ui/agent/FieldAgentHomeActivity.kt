@@ -36,6 +36,7 @@ class FieldAgentHomeActivity : AppCompatActivity() {
 
         binding.btnCurrentTickets.setOnClickListener {
             val intent = Intent(this, ListOfTicketsActivity::class.java)
+            intent.putExtra("USER_ROLE", "AGENT")
             startActivity(intent)
         }
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:padding="16dp"
-    tools:context=".ui.ngo.NgoLoginActivity">
+    tools:context=".ui.ngo.NgoOfferingAidActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -15,90 +15,142 @@
         android:layout_alignParentStart="true"
         android:src="@drawable/ic_phoenix_logo" />
 
-
     <TextView
-        android:id="@+id/tvWelcomeNgo"
-        android:layout_width="268dp"
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
-        android:layout_marginTop="6dp"
-        android:text="Offering AId"
-        android:textColor="#00FFFF"
-        android:textSize="36sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etNgoName"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvWelcomeNgo"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter Name of NGO/NPO"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+        android:text="Offering Aid"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
 
-    <EditText
-        android:id="@+id/etCommunityAssist"
-        android:layout_width="377dp"
-        android:layout_height="86dp"
-        android:layout_below="@id/etNgoName"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Community Assistance"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="380dp"
-        android:layout_height="70dp"
-        android:layout_below="@id/etCommunityAssist"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Programs"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etLoO"
-        android:layout_width="378dp"
-        android:layout_height="59dp"
-        android:layout_below="@+id/etPassword"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Location of Opperations"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etPassword3"
-        android:layout_width="384dp"
-        android:layout_height="73dp"
-        android:layout_below="@+id/etLoO"
-        android:layout_marginTop="17dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Contact Information"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <Button
-        android:id="@+id/btnConfirm"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnBack"
-        android:background="@drawable/button_background"
-        android:text="Confirm"
-        android:textColor="@android:color/white" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llButtons"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="16dp">
 
-    <Button
-        android:id="@+id/btnBack"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NGO Name"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/etNgoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Community Assistance"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/etCommunityAssistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:hint="Africa\'s largest disaster response NGO, offering humanitarian aid across various sectors."
+                android:lines="3"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Programs"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/etPrograms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:hint="Disaster response, hunger alleviation, water provision, healthcare, education, and human development."
+                android:lines="3"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Western Cape Presence"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/etWesternCapePresence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:hint="Office located at 4 Arbeidsweg, Penlyn Estate, Cape Town."
+                android:lines="3"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Contact Information"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/etContactInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="top"
+                android:hint="Toll-Free: 0800 786 911 | Email: info@giftofthegivers.org"
+                android:lines="2"
+                android:padding="12dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_background"
-        android:text="Back"
-        android:textColor="@android:color/white" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_back"
+            android:text="Back"
+            android:textColor="#0000FF" />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_back"
+            android:text="Confirm"
+            android:textColor="#0000FF" />
+    </LinearLayout>
 
 </RelativeLayout>
