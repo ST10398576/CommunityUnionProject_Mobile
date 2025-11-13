@@ -119,26 +119,6 @@
                 android:background="@drawable/edit_text_background"
                 android:padding="12dp" />
 
-            <Button
-                android:id="@+id/btnUploadEmploymentLetter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/edit_text_background"
-                android:text="Upload Employment Letter"
-                android:textColor="#A9A9A9"
-                android:padding="12dp" />
-
-            <Button
-                android:id="@+id/btnUploadAgentPhoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/edit_text_background"
-                android:text="Upload Agent Photo"
-                android:textColor="#A9A9A9"
-                android:padding="12dp" />
-
             <TextView
                 android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"

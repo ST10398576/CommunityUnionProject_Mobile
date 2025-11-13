@@ -50,11 +50,6 @@ class OnboardingActivity : AppCompatActivity() {
                 "If you are an NGO, join us and help the community to bring about a change for a better country today or tomorrow.",
                 "Sign Up"
             ),
-            OnboardingItem(
-                R.drawable.ic_phoenix_logo,
-                "Admin Login Page Accessible only to admins of the Application",
-                "Login"
-            )
         )
 
         viewPager.adapter = OnboardingAdapter(items) { position ->
@@ -62,7 +57,6 @@ class OnboardingActivity : AppCompatActivity() {
                 0 -> startActivity(Intent(this, UserRegisterActivity::class.java))
                 1 -> startActivity(Intent(this, FieldAgentRegisterActivity::class.java))
                 2 -> startActivity(Intent(this, NgoRegisterActivity::class.java))
-                3 -> startActivity(Intent(this, AdminLoginActivity::class.java))
             }
         }
 
