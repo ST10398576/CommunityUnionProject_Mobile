@@ -26,114 +26,130 @@
         android:textSize="36sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etName"
+    <LinearLayout
+        android:id="@+id/llButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Register"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_background"
+            android:text="Back"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/tvRegisterAgent"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter your Name and Surname"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+        android:layout_above="@id/llButtons">
 
-    <EditText
-        android:id="@+id/etContact"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etName"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter your Contact"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/spnAssociatedNgo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etContact"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp" />
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter your Name and Surname"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
 
-    <EditText
-        android:id="@+id/etNgoAgentId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spnAssociatedNgo"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter Associated NGO Agent ID"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+            <EditText
+                android:id="@+id/etContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter your Contact"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etNgoAgentId"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter your Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+            <Spinner
+                android:id="@+id/spnAssociatedNgo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:padding="12dp" />
 
-    <Spinner
-        android:id="@+id/spnLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etPassword"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp" />
+            <EditText
+                android:id="@+id/etNgoAgentId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Associated NGO Agent ID"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
 
-    <Spinner
-        android:id="@+id/spnEmploymentLetter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spnLocation"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp" />
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter your Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
 
-    <Spinner
-        android:id="@+id/spnAgentPhoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spnEmploymentLetter"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp" />
+            <Spinner
+                android:id="@+id/spnLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:padding="12dp" />
 
-    <TextView
-        android:id="@+id/tvLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spnAgentPhoto"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Already Have An account? Log In"
-        android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/btnUploadEmploymentLetter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:text="Upload Employment Letter"
+                android:textColor="#A9A9A9"
+                android:padding="12dp" />
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnBack"
-        android:background="@drawable/button_background"
-        android:text="Register"
-        android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/btnUploadAgentPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:text="Upload Agent Photo"
+                android:textColor="#A9A9A9"
+                android:padding="12dp" />
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_background"
-        android:text="Back"
-        android:textColor="@android:color/white" />
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="Already Have An account? Log In"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

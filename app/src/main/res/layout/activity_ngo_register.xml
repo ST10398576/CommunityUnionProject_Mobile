@@ -26,117 +26,105 @@
         android:textSize="36sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etNgoName"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/tvRegisterNgo"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter Name of NGO/NPO"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+        android:layout_above="@+id/llButtons">
 
-    <EditText
-        android:id="@+id/etRegistrationNumber"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etNgoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Name of NGO/NPO"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
+
+            <EditText
+                android:id="@+id/etRegistrationNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Registration Number"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
+
+            <EditText
+                android:id="@+id/etPboNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter PBO Number (Tax Exemption)"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
+
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColorHint="#A9A9A9" />
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:text="Already Have An account? Log In"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/etNgoName"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter Registration Number"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
 
-    <EditText
-        android:id="@+id/etPboNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etRegistrationNumber"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter PBO Number (Tax Exemption)"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Register"
+            android:textColor="@android:color/white" />
 
-    <Spinner
-        android:id="@+id/spnFoundationDocuments"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etPboNumber"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp" />
-
-    <Spinner
-        android:id="@+id/spnFinancialStatements"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spnFoundationDocuments"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp" />
-
-    <Spinner
-        android:id="@+id/spnNgoPhotos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spnFinancialStatements"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="12dp" />
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spnNgoPhotos"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Enter Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etPassword"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text_background"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColorHint="#A9A9A9" />
-
-    <TextView
-        android:id="@+id/tvLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/etConfirmPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Already Have An account? Log In"
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnBack"
-        android:background="@drawable/button_background"
-        android:text="Register"
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_background"
-        android:text="Back"
-        android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_background"
+            android:text="Back"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
 </RelativeLayout>
