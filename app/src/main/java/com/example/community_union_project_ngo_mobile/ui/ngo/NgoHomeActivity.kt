@@ -27,7 +27,7 @@ class NgoHomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnContactAnAgent.setOnClickListener {
+        binding.btnContactAgent.setOnClickListener {
             val intent = Intent(this, AgentInformationActivity::class.java)
             startActivity(intent)
         }

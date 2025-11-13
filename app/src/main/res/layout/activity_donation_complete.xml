@@ -84,14 +84,14 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnDownloadReceipt"
+        android:id="@+id/btnEmailReceipt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvPaymentMethod"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:backgroundTint="#FF0000"
-        android:text="Download Receipt" />
+        android:text="Email Receipt" />
 
     <Button
         android:id="@+id/btnHomePage"

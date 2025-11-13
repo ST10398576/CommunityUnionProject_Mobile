@@ -22,7 +22,7 @@ class TerminationRequestSentActivity : BaseAuthActivity() {
     }
 
     override fun setupListeners() {
-        binding.btnBackToNpoSettings.setOnClickListener {
+        binding.btnBackToNgoSettings.setOnClickListener {
             finish()
         }
     }

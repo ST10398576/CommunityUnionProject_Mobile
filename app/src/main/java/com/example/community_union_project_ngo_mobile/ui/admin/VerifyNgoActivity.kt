@@ -48,7 +48,7 @@ class VerifyNgoActivity : BaseAuthActivity() {
         binding.btnAccept.setOnClickListener {
             db.collection("users").document(userId).update("isVerified", true)
                 .addOnSuccessListener {
-                    // TODO: Send acceptance email
+                    // TODO: Send acceptance email to the user
                     Toast.makeText(this, "NGO Verified", Toast.LENGTH_SHORT).show()
                     finish()
                 }
@@ -58,14 +58,14 @@ class VerifyNgoActivity : BaseAuthActivity() {
         }
 
         binding.btnReject.setOnClickListener {
+            // First, delete the user's Firestore document
             db.collection("users").document(userId).delete()
                 .addOnSuccessListener {
-                    auth.getUser(userId).addOnSuccessListener { userRecord ->
-                        auth.deleteUser(userRecord.uid)
-                        // TODO: Send rejection email
-                        Toast.makeText(this, "NGO Rejected", Toast.LENGTH_SHORT).show()
-                        finish()
-                    }
+                    // IMPORTANT: The user's authentication record must be deleted manually from the Firebase Console.
+                    // The client SDK does not have permission to delete other users for security reasons.
+                    // TODO: Send rejection email
+                    Toast.makeText(this, "NGO Rejected. Remember to delete their auth record.", Toast.LENGTH_LONG).show()
+                    finish()
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Error deleting document: ${e.message}", Toast.LENGTH_SHORT).show()

@@ -26,17 +26,6 @@ class UpdateTicketActivity : BaseAuthActivity() {
     }
 
     override fun setupUI() {
-        val beneficiaries = mutableListOf<String>()
-        db.collection("users").whereEqualTo("role", "beneficiary").get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    beneficiaries.add(document.getString("fullName") ?: "")
-                }
-                val beneficiaryAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, beneficiaries)
-                beneficiaryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                binding.spnBeneficiaryName.adapter = beneficiaryAdapter
-            }
-
         val urgencyLevels = arrayOf(1, 2, 3, 4, 5)
         val urgencyAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, urgencyLevels)
         urgencyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -66,7 +55,6 @@ class UpdateTicketActivity : BaseAuthActivity() {
     override fun setupListeners() {
         binding.btnUpdate.setOnClickListener {
             val updatedTicket = hashMapOf(
-                "beneficiaryName" to binding.etBeneficiaryName.text.toString(),
                 "fieldAgentName" to binding.etFieldAgent.text.toString(),
                 "date" to binding.etDate.text.toString(),
                 "urgency" to binding.spnUrgencyLevel.selectedItem.toString().toInt(),

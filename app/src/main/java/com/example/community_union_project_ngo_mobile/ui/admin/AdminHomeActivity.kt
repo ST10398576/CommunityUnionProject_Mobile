@@ -21,11 +21,6 @@ class AdminHomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnPendingVerifications.setOnClickListener {
-            val intent = Intent(this, PendingVerificationActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.btnViewSyncLogs.setOnClickListener {
             val intent = Intent(this, ViewSyncLogsActivity::class.java)
             startActivity(intent)
@@ -35,7 +30,7 @@ class AdminHomeActivity : AppCompatActivity() {
             val intent = Intent(this, ToolsActivity::class.java)
             startActivity(intent)
         }
-        
+
         binding.btnTerminationRequests.setOnClickListener {
             val intent = Intent(this, TerminationRequestsActivity::class.java)
             startActivity(intent)

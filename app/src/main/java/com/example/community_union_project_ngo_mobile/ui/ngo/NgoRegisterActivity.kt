@@ -60,13 +60,13 @@ class NgoRegisterActivity : BaseAuthActivity() {
                             "registrationNumber" to registrationNumber,
                             "pboNumber" to pboNumber,
                             "role" to "ngo",
-                            "isVerified" to false // Admins will need to verify this account
+                            "isVerified" to true // Auto-verify
                         )
 
                         db.collection("users").document(userId)
                             .set(user)
                             .addOnSuccessListener {
-                                Toast.makeText(this, "Registration successful, pending verification", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
                                 val intent = Intent(this, NgoLoginActivity::class.java)
                                 startActivity(intent)
                                 finish()
