@@ -1,0 +1,44 @@
+# Azure DevOps Pipeline for CommunityUnionProject_Mobile
+# Runs on every commit and pull request to master
+# Builds Kotlin project, runs JUnit tests, and deploys automatically
+
+trigger:
+  branches:
+    include:
+      - master
+
+pr:
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Checkout@1
+  displayName: 'Checkout GitHub Repository'
+
+- task: Gradle@2
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'gradlew'
+    tasks: 'clean build'
+    publishJUnitResults: true
+    testResultsFiles: '**/build/test-results/test/*.xml'
+  displayName: 'Build Kotlin Project & Run JUnit Tests'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop'
+    publishLocation: 'Container'
+  displayName: 'Publish Build Artifacts'
+
+# Automated Deployment to Azure Web App (example target)
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'ST10278170'
+    appName: 'CommunityUnionProjectMobileApp'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+  displayName: 'Deploy to Azure Web App'
